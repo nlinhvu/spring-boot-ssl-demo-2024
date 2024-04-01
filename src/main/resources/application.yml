@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ssl-https-demo
+
+  ssl:
+    bundle:
+      pem:
+        server:
+          keystore:
+            certificate: server/certs/server.crt
+            private-key: server/certs/server.key
+            private-key-password: 123456
+          reload-on-update: true
+
+server:
+  ssl:
+    bundle: server
+  port: 8443
