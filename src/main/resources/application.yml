@@ -11,8 +11,11 @@ spring:
             private-key: server/certs/server.key
             private-key-password: 123456
           reload-on-update: true
+          truststore:
+            certificate: client/certs/client.crt
 
 server:
   ssl:
     bundle: server
+    client-auth: need
   port: 8443
